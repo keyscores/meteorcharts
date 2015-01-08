@@ -7,7 +7,7 @@
 
 <template name="conversion">
 <div class="container">
-	  <h3>Conversion</h3>
+	  <h3>Conversão</h3>
 </div>
 	<div class="row">
 	 
@@ -26,7 +26,7 @@
 	</div>
 	<div class="row">
       <div class="col s12 m5">
-        <div class="card-panel teal lighten-2">
+        <div class="card-panel teal lighten-3">
          <div class="row">
           <i class="col s2 white-text medium mdi-action-trending-up"></i>
           <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
@@ -45,7 +45,7 @@
 
 <template name="social">
 <div class="container">
-	  <h3>Conversion</h3>
+	  <h3>Social</h3>
 </div>
 	<div class="row">
 	 
@@ -64,7 +64,7 @@
 	</div>
 	<div class="row">
       <div class="col s12 m5">
-        <div class="card-panel red lighten-2">
+        <div class="card-panel red lighten-3">
          <div class="row">
           <i class="col s2 white-text medium mdi-action-trending-down"></i>
           <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
@@ -75,6 +75,41 @@
       </div>
     </div>
     </div>
+    </div>
+    </div>
+
+</template>
+
+<template name="logistica">
+<div class="container">
+	  <h3>Logística</h3>
+</div>
+	<div class="row">
+	 
+	<div class="card col s12 m5 offset-m1">
+        	<div class="valign-wrapper card-image waves-effect waves-block waves-light">
+        	  <canvas id="myChart"></canvas>
+        	</div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <div class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></div>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+	</div>
+	<div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel blue lighten-3">
+         <div class="row">
+          <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
+          <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </div>
+           </div>
+           </div>
+        </div>
     </div>
     </div>
 
@@ -102,6 +137,10 @@
   	    <ul id="nav-mobile" class="left side-nav">
   	      <li><a href="{{pathFor 'conversion'}}">Conversion Rates</a></li>
   	      <li><a href="{{pathFor 'social'}}">Mídia Social</a></li>
+  	      <li><a href="{{pathFor 'logistica'}}">Logistica</a></li>
+  	      <li><a href="{{pathFor 'social'}}">Transações</a></li>
+  	      <li><a href="{{pathFor 'social'}}">Mercado</a></li>
+  	      <li><a href="{{pathFor 'social'}}">Satisfação</a></li>
   	    </ul>
   	      <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
  	   </div>

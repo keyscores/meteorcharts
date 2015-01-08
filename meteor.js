@@ -38,6 +38,7 @@ Router.map(function(){
     this.route('button', {path: '/test'}) ;
     this.route('conversion', {path: '/conversion'} );
     this.route('social', {path: '/social'} );
+    this.route('logistica', {path: '/log'} );
     this.route('home', {path: '/'});
 });
 
@@ -75,6 +76,9 @@ if (Meteor.isClient) {
   	drawChart();
 }
 
+  Template.logistica.rendered = function(){
+  	drawChart();
+}
   Template.layout.rendered = function(){
   	   $(".button-collapse").sideNav(); 
  
