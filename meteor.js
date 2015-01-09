@@ -84,6 +84,8 @@ Router.map(function(){
     this.route('conversion', {path: '/conversion'} );
     this.route('social', {path: '/social'} );
     this.route('logistica', {path: '/log'} );
+    this.route('trans', {path: '/trans'} );
+    this.route('flot', {path: '/flot'} );
     this.route('home', {path: '/'});
 });
 
@@ -133,10 +135,21 @@ if (Meteor.isClient) {
 	console.log(time);
 
 }
+  
+  Template.flot.rendered = function(){
+	var a = performance.now();
+	$.plot($("#placeholder"), [ [[0, 0], [1, 1]] ], { yaxis: { max: 1 } });
+
+  	
+	var b = performance.now();
+	var time = (b-a);
+	console.log(time);
+
+}
 
 
 Template.logistica.rendered = function () {
- var a = performance.now();
+  var a = performance.now();
 
   c3.generate(
   {
@@ -158,11 +171,22 @@ Template.logistica.rendered = function () {
   console.log(b-a);
 	
   }
+  
+  Template.trans.rendered = function () {
+  var a = performance.now();
+
+  drawChart();
+  
+  var b = performance.now();
+  console.log(b-a);
+	
+  }
 
 
 
-  Template.layout.rendered = function(){
-  	   $(".button-collapse").sideNav(); 
+Template.layout.rendered = function(){
+  	   $(".button-collapse").sideNav();
+
  
 } 
 }
