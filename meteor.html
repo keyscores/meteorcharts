@@ -6,9 +6,9 @@
 
 </body>
 
-<template name="conversion">
+<template name="chartjs">
 <div class="container">
-	  <h3>Conversão</h3>
+	  <h3>Chartjs</h3>
 </div>
 	<div class="row">
 	 
@@ -45,9 +45,9 @@
 
 </template>
 
-<template name="social">
+<template name="c3">
 <div class="container">
-	  <h3>Social</h3>
+	  <h3>C3</h3>
 </div>
 	<div class="row">
 	 
@@ -82,9 +82,45 @@
 
 </template>
 
-<template name="logistica">
+<template name="flot">
+
 <div class="container">
-	  <h3>Logística</h3>
+	  <h3>Flot</h3>
+</div>
+ <div class="row"> 
+  <div class="card col s12 m5 offset-m1">
+   <div class="valign-wrapper card-image waves-effect waves-block waves-light">
+    <div id="placeholder" style="width:600px;height:300px"></div>
+   </div>
+   <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
+    <p><a href="#">This is a link</a></p>
+   </div>
+   <div class="card-reveal">
+    <div class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></div>
+    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+   </div>
+  </div>
+	<div class="row">
+	 <div class="col s12 m5">
+        <div class="card-panel blue lighten-3">
+         <div class="row">
+          <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
+          <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </div>
+        </div>
+    </div>
+      
+  </div>
+</div>
+</div>
+	 
+</template>
+
+<template name="multc3">
+<div class="container">
+	  <h3>Multiple C3</h3>
 </div>
  <div class="row"> 
   <div class="card col s12 m5 offset-m1">
@@ -119,9 +155,9 @@
 	 
 </template>
 
-<template name="trans">
+<template name="multchartjs">
 <div class="container">
-	  <h3>Trans</h3>
+	  <h3>Multiple Chartjs</h3>
 </div>
  <div class="row"> 
   <div class="card col s12 m5 offset-m1">
@@ -156,14 +192,19 @@
 	 
 </template>
 
-<template name="flot">
+
+
+<template name="high">
 <div class="container">
-	  <h3>Flot</h3>
+	  <h3>Highcharts</h3>
 </div>
  <div class="row"> 
   <div class="card col s12 m5 offset-m1">
    <div class="valign-wrapper card-image waves-effect waves-block waves-light">
-    <div id="placeholder" style="width:600px;height:300px"></div>
+   
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    
+    
    </div>
    <div class="card-content">
     <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
@@ -202,8 +243,8 @@
 
 <template name="home">
 	<div class="container">
-	<h1> Atlas Ecommerce </h1>
- 	 <p class="flow-text">Bem vindo ao Atlas de Métricas do Ecommerce</p>
+	<h1> Testing Charts </h1>
+ 	 <p class="flow-text">Meteor + Chartjs (canvas), Flot (canvas), C3 (svg), Highcharts (svg)</p>
  	</div>
 </template>
 
@@ -211,13 +252,11 @@
 		<nav>
   	  <div class="nav-wrapper">
   	    <ul id="nav-mobile" class="left side-nav">
-  	      <li><a href="{{pathFor 'conversion'}}">Chartjs</a></li>
-  	      <li><a href="{{pathFor 'social'}}">C3</a></li>
+  	      <li><a href="{{pathFor 'chartjs'}}">Chartjs</a></li>
+  	      <li><a href="{{pathFor 'c3'}}">C3</a></li>
   	      <li><a href="{{pathFor 'flot'}}">Flot</a></li>
-  	      <li><a href="{{pathFor 'logistica'}}">Logistica</a></li>
-  	      <li><a href="{{pathFor 'trans'}}">Transações</a></li>
-  	      
-  	      <li><a href="{{pathFor 'social'}}">Satisfação</a></li>
+  	      <li><a href="{{pathFor 'high'}}">Highcharts</a></li>
+  	      <li><a href="{{pathFor 'multc3'}}">Multiple C3</a></li>
   	    </ul>
   	      <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
  	   </div>

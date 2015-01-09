@@ -48,6 +48,7 @@ minimongo@1.0.6
 mobile-status-bar@1.0.2
 mongo@1.0.11
 mrt:flot@1.0.6
+mrt:highcharts@0.1.0
 npm-bcrypt@0.7.7
 observe-sequence@1.0.4
 ordered-dict@1.0.2

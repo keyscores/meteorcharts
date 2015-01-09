@@ -13,3 +13,4 @@ iron:router
 houston:admin
 peernohell:c3
 mrt:flot
+mrt:highcharts
