@@ -148,9 +148,9 @@ Template.flot.rendered = function(){
 }
 
 Template.high.rendered = function(){
-
+var a = performance.now();
 $(function () {
-	var a = performance.now();
+	
 	
     $('#container').highcharts({
         title: {
