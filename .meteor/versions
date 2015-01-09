@@ -12,7 +12,7 @@ boilerplate-generator@1.0.2
 callback-hook@1.0.2
 check@1.0.3
 coffeescript@1.0.5
-d0minikk:materialize-meteor@1.94.1
+d0minikk:materialize-meteor@1.94.2
 dburles:mongo-collection-instances@0.2.2
 ddp@1.0.13
 deps@1.0.6
@@ -50,12 +50,14 @@ mongo@1.0.11
 npm-bcrypt@0.7.7
 observe-sequence@1.0.4
 ordered-dict@1.0.2
+peernohell:c3@1.1.2
 random@1.0.2
 reactive-dict@1.0.5
 reactive-var@1.0.4
 reload@1.1.2
 retry@1.0.2
 routepolicy@1.0.3
+sergeyt:d3@3.4.1
 service-configuration@1.0.3
 session@1.0.5
 sha@1.0.2
