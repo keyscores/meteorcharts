@@ -76,7 +76,6 @@ c3hbar = {
 Router.configure({
     notFoundTemplate: 'notFound',
     layoutTemplate: 'layout'
-    
 });
 
 Router.map(function(){
@@ -98,14 +97,14 @@ if (Meteor.isClient) {
   });
 
 
-  Template.button.helpers({
+Template.button.helpers({
     counters: function () {
       return Data.find({ name: "testing" }).count();
     }
 
   });
 
-  Template.button.events({
+Template.button.events({
     'click button': function () {
       // increment the counter when button is clicked
       Data.insert({
@@ -122,6 +121,7 @@ Template.chartjs.rendered = function(){
   	var b = performance.now();
   console.log(b-a);
 }
+
 Template.c3.rendered = function(){
 	var a = performance.now();
   	c3.generate(
@@ -151,6 +151,7 @@ Template.high.rendered = function(){
 
 $(function () {
 	var a = performance.now();
+	
     $('#container').highcharts({
         title: {
             text: 'Monthly Average Temperature',
@@ -198,7 +199,8 @@ $(function () {
         }]
     });
 });
-
+ var b = performance.now();
+  console.log(b-a);
 
 }
 
