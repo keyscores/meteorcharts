@@ -192,6 +192,45 @@
 	 
 </template>
 
+<template name="chartist">
+<div class="container">
+	  <h3>Chartist</h3>
+</div>
+ <div class="row"> 
+  <div class="card col s12 m5 offset-m1">
+   <div class="valign-wrapper card-image waves-effect waves-block waves-light">
+    
+    <div class="ct-chart ct-perfect-fourth"></div>
+   
+   </div>
+   <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
+    <p><a href="#">This is a link</a></p>
+   </div>
+   <div class="card-reveal">
+    <div class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></div>
+    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+   </div>
+  </div>
+	<div class="row">
+	 <div class="col s12 m5">
+      	<canvas id="myChart"></canvas>
+      	<canvas id="myChart"></canvas>
+        <div class="card-panel blue lighten-3">
+         <div class="row">
+          <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
+          <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </div>
+        </div>
+    </div>
+      
+  </div>
+</div>
+</div>
+	 
+</template>
+
 
 
 <template name="high">
@@ -244,7 +283,7 @@
 <template name="home">
 	<div class="container">
 	<h1> Testing Charts </h1>
- 	 <p class="flow-text">Meteor + Chartjs (canvas), Flot (canvas), C3 (svg), Highcharts (svg)</p>
+ 	 <p class="flow-text">Meteor + Chartjs (canvas), Flot (canvas), C3 (svg), Highcharts (svg), Chartist(svg)</p>
  	</div>
 </template>
 
@@ -257,6 +296,7 @@
   	      <li><a href="{{pathFor 'flot'}}">Flot</a></li>
   	      <li><a href="{{pathFor 'high'}}">Highcharts</a></li>
   	      <li><a href="{{pathFor 'multc3'}}">Multiple C3</a></li>
+  	      <li><a href="{{pathFor 'chartist'}}">Chartist</a></li>
   	    </ul>
   	      <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
  	   </div>

@@ -36,15 +36,10 @@ function drawChart(){
 
 c3spline = {
       type: 'spline',
-      json: [
-                {name: 'www.site1.com', upload: 200, download: 200, total: 400},
-                {name: 'www.site2.com', upload: 100, download: 300, total: 400},
-                {name: 'www.site3.com', upload: 300, download: 200, total: 500},
-                {name: 'www.site4.com', upload: 400, download: 100, total: 500},
-            ],
-      keys: {
-                value: ['upload', 'download'],
-            }
+      columns: [
+            ['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 50, 20, 10, 40, 15, 25]
+        ]
         },
 c3donut = {
       type: 'donut',
@@ -70,9 +65,7 @@ c3hbar = {
                 value: ['upload', 'download'],
             }
         },
-        
-        
-        
+
 Router.configure({
     notFoundTemplate: 'notFound',
     layoutTemplate: 'layout'
@@ -85,6 +78,7 @@ Router.map(function(){
     this.route('multc3', {path: '/multc3'} );
     this.route('flot', {path: '/flot'} );
     this.route('high', {path: '/highcharts'} );
+    this.route('chartist', {path: '/chartist'} );
     this.route('home', {path: '/'});
 });
 
@@ -93,6 +87,8 @@ Data = new Mongo.Collection("data");
     
 if (Meteor.isClient) {
   Meteor.startup(function () {
+  
+
 
   });
 
@@ -238,13 +234,28 @@ Template.multchartjs.rendered = function () {
 	
   }
 
+Template.chartist.rendered = function () {
+
+var data = {
+  // A labels array that can contain any sort of values
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  // Our series array that contains series objects or in this case series data arrays
+  series: [
+    [5, 2, 4, 2, 0]
+  ]
+	
+  }
+  var a = performance.now();
+  new Chartist.Line('.ct-chart', data);
+  
+  var b = performance.now();
+  console.log(b-a);
+  };
+
 
 
 Template.layout.rendered = function(){
   	   $(".button-collapse").sideNav();
-
-var b = performance.now();
-  console.log(b-a);
  
 } 
 }
