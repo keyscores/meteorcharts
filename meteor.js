@@ -245,7 +245,9 @@ var data = {
   ]
 	
   }
+  
   var a = performance.now();
+  
   new Chartist.Line('.ct-chart', data);
   
   var b = performance.now();
