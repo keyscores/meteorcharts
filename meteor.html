@@ -41,6 +41,80 @@
 
 </template>
 
+<template name="flot">
+
+<div class="container">
+	  <h3>Flot</h3>
+</div>
+ <div class="row"> 
+  <div class="card col s12 m5 offset-m1">
+   <div class="valign-wrapper card-image waves-effect waves-block waves-light">
+    <div id="placeholder" style="width:600px;height:300px"></div>
+   </div>
+   <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
+    <p><a href="#">This is a link</a></p>
+   </div>
+   <div class="card-reveal">
+    <div class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></div>
+    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+   </div>
+  </div>
+	<div class="row">
+	 <div class="col s12 m5">
+        <div class="card-panel blue lighten-3">
+         <div class="row">
+          <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
+          <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </div>
+        </div>
+    </div>
+      
+  </div>
+</div>
+</div>
+	 
+</template>
+
+<template name="high">
+<div class="container">
+	  <h3>Highcharts</h3>
+</div>
+ <div class="row"> 
+  <div class="card col s12 m5 offset-m1">
+   <div class="valign-wrapper card-image waves-effect waves-block waves-light">
+   
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    
+    
+   </div>
+   <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
+    <p><a href="#">This is a link</a></p>
+   </div>
+   <div class="card-reveal">
+    <div class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></div>
+    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+   </div>
+  </div>
+	<div class="row">
+	 <div class="col s12 m5">
+        <div class="card-panel blue lighten-3">
+         <div class="row">
+          <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
+          <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </div>
+        </div>
+    </div>
+      
+  </div>
+</div>
+</div>
+	 
+</template>
+
 <template name="c3">
 <div class="container">
 	  <h3>C3</h3>
@@ -76,42 +150,6 @@
     </div>
     </div>
 
-</template>
-
-<template name="flot">
-
-<div class="container">
-	  <h3>Flot</h3>
-</div>
- <div class="row"> 
-  <div class="card col s12 m5 offset-m1">
-   <div class="valign-wrapper card-image waves-effect waves-block waves-light">
-    <div id="placeholder" style="width:600px;height:300px"></div>
-   </div>
-   <div class="card-content">
-    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
-    <p><a href="#">This is a link</a></p>
-   </div>
-   <div class="card-reveal">
-    <div class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></div>
-    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-   </div>
-  </div>
-	<div class="row">
-	 <div class="col s12 m5">
-        <div class="card-panel blue lighten-3">
-         <div class="row">
-          <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
-          <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-          </div>
-        </div>
-    </div>
-      
-  </div>
-</div>
-</div>
-	 
 </template>
 
 <template name="multc3">
@@ -151,14 +189,16 @@
 	 
 </template>
 
-<template name="multchartjs">
+<template name="chartist">
 <div class="container">
-	  <h3>Multiple Chartjs</h3>
+	  <h3>Chartist</h3>
 </div>
  <div class="row"> 
   <div class="card col s12 m5 offset-m1">
    <div class="valign-wrapper card-image waves-effect waves-block waves-light">
-    <canvas id="myChart"></canvas>
+    
+    <div class="ct-chart ct-perfect-fourth"></div>
+   
    </div>
    <div class="card-content">
     <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
@@ -171,8 +211,7 @@
   </div>
 	<div class="row">
 	 <div class="col s12 m5">
-      	<canvas id="myChart"></canvas>
-      	<canvas id="myChart"></canvas>
+
         <div class="card-panel blue lighten-3">
          <div class="row">
           <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
@@ -188,7 +227,7 @@
 	 
 </template>
 
-<template name="chartist">
+<template name="multchartist">
 <div class="container">
 	  <h3>Chartist</h3>
 </div>
@@ -212,46 +251,6 @@
 	 <div class="col s12 m5">
       	<canvas id="myChart"></canvas>
       	<canvas id="myChart"></canvas>
-        <div class="card-panel blue lighten-3">
-         <div class="row">
-          <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
-          <div class="s10 offset-s2 white-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-          </div>
-        </div>
-    </div>
-      
-  </div>
-</div>
-</div>
-	 
-</template>
-
-
-
-<template name="high">
-<div class="container">
-	  <h3>Highcharts</h3>
-</div>
- <div class="row"> 
-  <div class="card col s12 m5 offset-m1">
-   <div class="valign-wrapper card-image waves-effect waves-block waves-light">
-   
-    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-    
-    
-   </div>
-   <div class="card-content">
-    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
-    <p><a href="#">This is a link</a></p>
-   </div>
-   <div class="card-reveal">
-    <div class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></div>
-    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-   </div>
-  </div>
-	<div class="row">
-	 <div class="col s12 m5">
         <div class="card-panel blue lighten-3">
          <div class="row">
           <i class="col s2 white-text medium mdi-action-trending-neutral"></i>
@@ -297,8 +296,10 @@
   	      <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
  	   </div>
 	  </nav>
+	  {{timetaken}}
 
 	  {{> yield}}
+	  
 	  
 	  <footer>
           <div class="container">

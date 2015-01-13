@@ -1,3 +1,21 @@
+//Iron Router Configs
+Router.configure({
+    notFoundTemplate: 'notFound',
+    layoutTemplate: 'layout'
+});
+
+Router.map(function(){
+    this.route('button', {path: '/test'}) ;
+    this.route('chartjs', {path: '/chartjs'} );
+    this.route('c3', {path: '/c3'} );
+    this.route('multc3', {path: '/multc3'} );
+    this.route('flot', {path: '/flot'} );
+    this.route('high', {path: '/highcharts'} );
+    this.route('chartist', {path: '/chartist'} );
+    this.route('home', {path: '/'});
+});
+
+// Chart objects
 function drawChart(){
   Chart.defaults.global.responsive = true;
   Chart.defaults.global.tooltipCornerRadius = 1;
@@ -33,7 +51,16 @@ function drawChart(){
   new Chart(ctx).Line(data);
 }
 
-
+chartistdata = {
+  // A labels array that can contain any sort of values
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  // Our series array that contains series objects or in this case series data arrays
+  series: [
+    [5, 2, 4, 2, 0]
+  ]
+	
+  }
+  
 c3spline = {
       type: 'spline',
       columns: [
@@ -41,6 +68,7 @@ c3spline = {
             ['data2', 50, 20, 10, 40, 15, 25]
         ]
         },
+        
 c3donut = {
       type: 'donut',
       json: [
@@ -53,6 +81,7 @@ c3donut = {
                 value: ['upload', 'download'],
             }
         },
+        
 c3hbar = {
       type: 'bar',
       json: [
@@ -66,25 +95,11 @@ c3hbar = {
             }
         },
 
-Router.configure({
-    notFoundTemplate: 'notFound',
-    layoutTemplate: 'layout'
-});
-
-Router.map(function(){
-    this.route('button', {path: '/test'}) ;
-    this.route('chartjs', {path: '/chartjs'} );
-    this.route('c3', {path: '/c3'} );
-    this.route('multc3', {path: '/multc3'} );
-    this.route('flot', {path: '/flot'} );
-    this.route('high', {path: '/highcharts'} );
-    this.route('chartist', {path: '/chartist'} );
-    this.route('home', {path: '/'});
-});
-
+//Testing mongo connections
 Data = new Mongo.Collection("data");
     
-    
+
+//Client Script
 if (Meteor.isClient) {
   Meteor.startup(function () {
   
@@ -93,23 +108,7 @@ if (Meteor.isClient) {
   });
 
 
-Template.button.helpers({
-    counters: function () {
-      return Data.find({ name: "testing" }).count();
-    }
 
-  });
-
-Template.button.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Data.insert({
-      name: "testing",
-      score:0
-      });
-    }
-  });
-  
   
 Template.chartjs.rendered = function(){
   var a = performance.now();
@@ -223,43 +222,41 @@ Template.multc3.rendered = function () {
   console.log(b-a);
 	
   }
-  
-Template.multchartjs.rendered = function () {
-  var a = performance.now();
-
-  drawChart();
-  
-  var b = performance.now();
-  console.log(b-a);
-	
-  }
 
 Template.chartist.rendered = function () {
 
-var data = {
-  // A labels array that can contain any sort of values
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-  // Our series array that contains series objects or in this case series data arrays
-  series: [
-    [5, 2, 4, 2, 0]
-  ]
-	
-  }
-  
   var a = performance.now();
   
-  new Chartist.Line('.ct-chart', data);
+  new Chartist.Line('.ct-chart', chartistdata);
   
   var b = performance.now();
   console.log(b-a);
-  };
-
-
+  }
 
 Template.layout.rendered = function(){
   	   $(".button-collapse").sideNav();
  
 } 
+
+
+  
+//Testing mongo connections
+Template.button.helpers({
+    counters: function () {
+      return Data.find({ name: "testing" }).count();
+    }
+
+  });
+
+Template.button.events({
+    'click button': function () {
+      // increment the counter when button is clicked
+      Data.insert({
+      name: "testing",
+      score:0
+      });
+    }
+  });
 }
 
 if (Meteor.isServer) {
