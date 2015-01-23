@@ -19,7 +19,7 @@ Router.map(function(){
 function drawChart(){
   Chart.defaults.global.responsive = true;
   Chart.defaults.global.tooltipCornerRadius = 1;
-  
+
   var data = {
   labels : ["January","February","March","April","May","June","July"],
   scaleShowGridLines : false,
@@ -30,7 +30,7 @@ function drawChart(){
         pointColor : "#eeeeee",
         pointStrokeColor : "#fff",
         data : [65,59,90,81,56,55,40]
-        
+
     },
     {
         fillColor : "rgba(151,187,205,0.5)",
@@ -58,9 +58,9 @@ chartistdata = {
   series: [
     [5, 2, 4, 2, 0]
   ]
-	
+
   }
-  
+
 c3spline = {
       type: 'spline',
       columns: [
@@ -68,7 +68,7 @@ c3spline = {
             ['data2', 50, 20, 10, 40, 15, 25]
         ]
         },
-        
+
 c3donut = {
       type: 'donut',
       json: [
@@ -81,7 +81,7 @@ c3donut = {
                 value: ['upload', 'download'],
             }
         },
-        
+
 c3hbar = {
       type: 'bar',
       json: [
@@ -97,19 +97,19 @@ c3hbar = {
 
 //Testing mongo connections
 Data = new Mongo.Collection("data");
-    
+
 
 //Client Script
 if (Meteor.isClient) {
   Meteor.startup(function () {
-  
+
 
 
   });
 
 
 
-  
+
 Template.chartjs.rendered = function(){
   var a = performance.now();
   	drawChart();
@@ -124,18 +124,18 @@ Template.c3.rendered = function(){
     bindto: this.find('.chart'),
       data: c3spline
   });
-  	
+
 	var b = performance.now();
 	var time = (b-a);
 	console.log(time);
 
 }
-  
+
 Template.flot.rendered = function(){
 	var a = performance.now();
 	$.plot($("#placeholder"), [ [[0, 0], [1, 1]] ], { yaxis: { max: 1 } });
 
-  	
+
 	var b = performance.now();
 	var time = (b-a);
 	console.log(time);
@@ -145,8 +145,8 @@ Template.flot.rendered = function(){
 Template.high.rendered = function(){
 var a = performance.now();
 $(function () {
-	
-	
+
+
     $('#container').highcharts({
         title: {
             text: 'Monthly Average Temperature',
@@ -217,29 +217,34 @@ Template.multc3.rendered = function () {
     bindto: this.find('.chart3'),
       data: c3donut
   })
-  
+
   var b = performance.now();
   console.log(b-a);
-	
+
   }
 
 Template.chartist.rendered = function () {
 
   var a = performance.now();
-  
-  new Chartist.Line('.ct-chart', chartistdata);
-  
+
+  var cl = new Chartist.Line('.ct-chart', chartistdata);
+  cl.eventEmitter.addEventHandler('draw', function() {
+    var b2 = performance.now();
+    console.log('just drew', Math.floor(b2-a));
+
+  });
+
   var b = performance.now();
   console.log(b-a);
   }
 
 Template.layout.rendered = function(){
   	   $(".button-collapse").sideNav();
- 
-} 
+
+}
 
 
-  
+
 //Testing mongo connections
 Template.button.helpers({
     counters: function () {
