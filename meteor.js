@@ -228,15 +228,23 @@ Template.chartist.rendered = function () {
   var a = performance.now();
 
   var cl = new Chartist.Line('.ct-chart', chartistdata);
-  cl.eventEmitter.addEventHandler('draw', function() {
-    var b2 = performance.now();
-    console.log('just drew', Math.floor(b2-a));
 
-  });
+  var realCreateChart = cl.createChart;
+  cl.createChart = function() {
+    realCreateChart.apply(this, arguments);
+    var b2 = performance.now();
+    console.log('done creating', b2-a);
+  };
+
+  // cl.eventEmitter.addEventHandler('draw', function() {
+  //   var b2 = performance.now();
+  //   console.log('draw event finished', b2-a, 'ms after init');
+  // });
+
 
   var b = performance.now();
   console.log(b-a);
-  }
+}
 
 Template.layout.rendered = function(){
   	   $(".button-collapse").sideNav();
